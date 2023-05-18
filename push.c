@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <ctype.h>
 void _push(stack_t **head, unsigned int line_number, char *token)
 {
 	int value;
