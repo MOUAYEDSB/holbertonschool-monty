@@ -43,5 +43,4 @@ void _push(stack_t **head, unsigned int n, char *token)
 		(*head)->prev = new_node;
 	}
 	*head = new_node;
-	j
 }
