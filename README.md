@@ -1,4 +1,4 @@
-https://media.licdn.com/dms/image/C5612AQFAa7SGVzYEqg/article-cover_image-shrink_423_752/0/1632753993625?e=1689811200&v=beta&t=hKIaHZYDu6aBu9WKqdyMsm65dRpvCsPLnzV2UIuK2LM
+![App Screenshot](https://media.licdn.com/dms/image/C5612AQFAa7SGVzYEqg/article-cover_image-shrink_423_752/0/1632753993625?e=1689811200&v=beta&t=hKIaHZYDu6aBu9WKqdyMsm65dRpvCsPLnzV2UIuK2LM)
 
 ## 1. Description 👀
 
