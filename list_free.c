@@ -8,15 +8,15 @@
 
 void _freeList(stack_t **head)
 {
-	/* Vérifier si la tête est NULL */
+	/* Check if head is NULL */
 	if (!head)
 		return;
-	/* Parcourir la liste chainée et libérer chaque noeud */
+	/* Iterate through the linked list and free each node */
 	while (*head && (*head)->next)
 	{
 		*head = (*head)->next;
 		free((*head)->prev);
 	}
-	/* Libérer la mémoire occupée par la tête de la liste */
+	/* Free the memory occupied by the head of the list */
 	free(*head);
 }

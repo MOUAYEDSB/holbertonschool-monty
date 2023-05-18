@@ -40,32 +40,32 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 
-	/*Obtenir le premier token*/
+	/*Get the first token*/
 	token = strtok(buffer, DELIMS);
 
 	while (token != NULL)
 	{
 		if (isPush == 1)
 		{
-			/*Si la commande "push" a été détectée*/
-			_push(&h, line, token);		  /*Ajouter le token à la pile*/
-			isPush = 0;					  /*Réinitialiser le drapeau "push"*/
-			token = strtok(NULL, DELIMS); /*Obtenir le token suivant*/
+			/*If the "push" command was detected*/
+			_push(&h, line, token);		  /*add token to the pile*/
+			isPush = 0;					  /*flag reintialization "push"*/
+			token = strtok(NULL, DELIMS); /*get token next*/
 			line++;
 			continue;
 		}
 		else if (strcmp(token, "push") == 0)
 		{
-			/*Si la commande "push" est détectée*/
-			isPush = 1;					  /*Activer le drapeau "push"*/
-			token = strtok(NULL, DELIMS); /*Obtenir le token suivant*/
+			/*if the command "push" detected*/
+			isPush = 1;					  /*Activate the flag "push"*/
+			token = strtok(NULL, DELIMS); /* get the next token */
 			continue;
 		}
 		else
 		{
-			/*Si la commande n'est pas "push"*/
+			/*if the command "push" was not found*/
 			if (getfunc(token) != 0)
-				getfunc(token)(&h, line); /*Exécuter la commande correspondante*/
+				getfunc(token)(&h, line); /*Execute the main command*/
 			else
 			{
 				_freeList(&h);
@@ -75,7 +75,7 @@ int main(int ac, char **av)
 		}
 
 		line++;
-		token = strtok(NULL, DELIMS); /*Obtenir le token suivant*/
+		token = strtok(NULL, DELIMS); /*get the next*/
 	}
 
 	_freeList(&h);

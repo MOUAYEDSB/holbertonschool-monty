@@ -9,9 +9,9 @@
  */
 void _pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
-	stack_t *tmp = *stack; /*Créer un ptr tmp pour parcourir la pile*/
+	stack_t *tmp = *stack; /*Create a ptr tmp to walk the stack*/
 
-	/* Parcourir la pile tant que le ptr tmp n'est pas NULL*/
+	/* Walk the stack until the ptr tmp is NULL */
 	while (tmp)
 	{
 		printf("%d\n", tmp->n);

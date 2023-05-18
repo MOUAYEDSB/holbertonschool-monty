@@ -9,13 +9,13 @@
 
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	/* Vérifier si le stack est vide */
+	/* Check if the stack is empty */
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	/* Imprimer la valeur au sommet de la pile */
+	/* Print the value at the top of the stack */
 	printf("%d\n", (*stack)->n);
 }
