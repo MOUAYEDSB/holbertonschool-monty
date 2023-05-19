@@ -8,25 +8,31 @@
  */
 void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number)
 {
-    int i = 0;
-    instruction_t op_struct[] = {
-        {"pall", _pall},
-        {"pint", _pint},
-        {"pop", _pop},
-        {"swap", _swap},
-        {"add", _add},
-        {"nop", _nop},
-        {"sub", _sub},
+	int i = 0;
+	instruction_t op_struct[] = {
+		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
+		{"sub", _sub},
 		{"div", _div},
-        {NULL, NULL}
-    };
+		{"mul", _mul},
+		{"mod", _mod},
+		{NULL, NULL}};
+	/* Check if opcode is a comment */
+	{
+		if (opcode[0] == '#')
+			return NULL; // Treat the line as a comment
 
-    /* Loop through the instruction tab and compare the token to the opcode */
-    /* Check if token matches instruction opcode */
-    for (; op_struct[i].opcode != NULL; i++)
-    {
-        if (strcmp(opcode, op_struct[i].opcode) == 0)
-            return (op_struct[i].f);
-    }
-    return (NULL);
+		/* Loop through the instruction tab and compare the token to the opcode */
+		/* Check if token matches instruction opcode */
+		for (; op_struct[i].opcode != NULL; i++)
+		{
+			if (strcmp(opcode, op_struct[i].opcode) == 0)
+				return (op_struct[i].f);
+		}
+		return (NULL);
+	}
 }
