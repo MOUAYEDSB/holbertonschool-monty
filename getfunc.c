@@ -21,10 +21,7 @@ void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"mul", _mul},
 		{"mod", _mod},
 		{NULL, NULL}};
-	/* Check if opcode is a comment */
 	{
-		if (opcode[0] == '#')
-			return NULL; // Treat the line as a comment
 
 		/* Loop through the instruction tab and compare the token to the opcode */
 		/* Check if token matches instruction opcode */
